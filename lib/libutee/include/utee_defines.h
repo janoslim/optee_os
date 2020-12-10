@@ -6,6 +6,8 @@
 #define UTEE_DEFINES_H
 
 #include <compiler.h>
+#include <tee_api_defines.h>
+#include <tee_api_defines_extensions.h>
 #include <types_ext.h>
 
 /*
@@ -126,9 +128,6 @@ static inline size_t __tee_alg_get_digest_size(uint32_t algo)
 	case TEE_ALG_SHA512:
 	case TEE_ALG_HMAC_SHA512:
 		return TEE_SHA512_HASH_SIZE;
-	case TEE_ALG_SM3:
-	case TEE_ALG_HMAC_SM3:
-		return TEE_SM3_HASH_SIZE;
 	case TEE_ALG_AES_CBC_MAC_NOPAD:
 	case TEE_ALG_AES_CBC_MAC_PKCS5:
 	case TEE_ALG_AES_CMAC:
