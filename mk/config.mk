@@ -105,7 +105,8 @@ CFG_TEE_IMPL_DESCR ?= OPTEE
 CFG_OS_REV_REPORTS_GIT_SHA1 ?= y
 
 # Trusted OS implementation version
-TEE_IMPL_VERSION ?= $(shell git describe --always --dirty=-softgent 2>/dev/null || echo Unknown)
+TEE_IMPL_VERSION ?= $(shell git describe --always --dirty 2>/dev/null || echo Unknown)
+TEE_IMPL_VERSION := $(TEE_IMPL_VERSION)-softgent
 ifeq ($(CFG_OS_REV_REPORTS_GIT_SHA1),y)
 TEE_IMPL_GIT_SHA1 := 0x$(shell git rev-parse --short=8 HEAD 2>/dev/null || echo 0)
 else
