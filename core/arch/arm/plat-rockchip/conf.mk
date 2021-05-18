@@ -36,6 +36,8 @@ include core/arch/arm/cpu/cortex-armv8-0.mk
 $(call force,CFG_TEE_CORE_NB_CORE,6)
 $(call force,CFG_ARM_GICV3,y)
 
+CFG_TZSRAM_START ?= 0xff8c0000
+CFG_TZSRAM_SIZE  ?= 0x00030000
 CFG_TZDRAM_START ?= 0x30000000
 CFG_TZDRAM_SIZE  ?= 0x02000000
 CFG_SHMEM_START  ?= 0x32000000
